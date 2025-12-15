@@ -1252,25 +1252,25 @@ nav {
         <p class="section-subtitle">نسعد بسماع آرائكم واقتراحاتكم</p>
         <div class="contact-container">
             <div class="contact-form">
-                <form onsubmit="contactForm">
-                    <div class="form-group">
-                        <label>الاسم الكامل</label>
-                        <input type="text" name="name" required placeholder="أدخل اسمك">
-                    </div>
-                    <div class="form-group">
-                        <label>البريد الإلكتروني</label>
-                        <input type="email" name="email" required placeholder="example@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label>الموضوع</label>
-                        <input type="text" name="subject" required placeholder="موضوع الرسالة">
-                    </div>
-                    <div class="form-group">
-                        <label>الرسالة</label>
-                        <textarea name="message" required placeholder="اكتب رسالتك هنا..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">إرسال الرسالة</button>
-                </form>
+                <form action="mailto:babylonbaghdad1958@yahoo.com" method="post" enctype="text/plain">
+				    <div class="form-group">
+				        <label>الاسم الكامل</label>
+				        <input type="text" name="name" required placeholder="أدخل اسمك">
+				    </div>
+				    <div class="form-group">
+				        <label>البريد الإلكتروني</label>
+				        <input type="email" name="email" required placeholder="example@email.com">
+				    </div>
+				    <div class="form-group">
+				        <label>الموضوع</label>
+				        <input type="text" name="subject" required placeholder="موضوع الرسالة">
+				    </div>
+				    <div class="form-group">
+				        <label>الرسالة</label>
+				        <textarea name="message" required placeholder="اكتب رسالتك هنا..."></textarea>
+				    </div>
+				    <button type="submit" class="submit-btn">إرسال الرسالة</button>
+				</form>
             </div>
             <div class="contact-info">
                 <h3 style="color: #1a472a; font-size: 2rem; margin-bottom: 2rem;">معلومات الاتصال</h3>
@@ -1285,7 +1285,7 @@ nav {
                     <span class="contact-icon">📞</span>
                     <div>
                         <h3>الهاتف</h3>
-                        <p>(011) 5169885007</p>
+                        <p>+011 5169 885007</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1329,7 +1329,7 @@ nav {
             <div class="footer-section">
                 <h3>تواصل معنا</h3>
                 <p>📧 babylonbaghdad1958@yahoo.com</p>
-                <p>📞 (011) 5169885007</p>
+                <p>📞 +011 5169 885007</p>
                 <p>📍* * * *</p>
             </div>
             <div class="footer-section">
@@ -1601,26 +1601,6 @@ function toggleLanguage() {
     document.querySelector('.submit-btn').textContent = t.formSubmit;
 }
 
-// Form Submission with mailto
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const name = document.querySelector('input[name="name"]').value;
-    const email = document.querySelector('input[name="email"]').value;
-    const subject = document.querySelector('input[name="subject"]').value;
-    const message = document.querySelector('textarea[name="message"]').value;
-    
-    // Create email body
-    const body = `الاسم: ${name}%0D%0A` +
-                `البريد الإلكتروني: ${email}%0D%0A%0D%0A` +
-                `الرسالة:%0D%0A${message}`;
-    
-    // Create mailto link
-    const mailtoLink = `mailto:babylonbaghdad1958@yahoo.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-});
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1641,6 +1621,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 </body>
 
 </html>
+
 
 
 
