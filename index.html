@@ -1252,7 +1252,7 @@ nav {
         <p class="section-subtitle">نسعد بسماع آرائكم واقتراحاتكم</p>
         <div class="contact-container">
             <div class="contact-form">
-                <form onsubmit="handleSubmit(event)">
+                <form onsubmit="contactForm">
                     <div class="form-group">
                         <label>الاسم الكامل</label>
                         <input type="text" name="name" required placeholder="أدخل اسمك">
@@ -1278,21 +1278,21 @@ nav {
                     <span class="contact-icon">📍</span>
                     <div>
                         <h3>العنوان</h3>
-                        <p>****</p>
+                        <p>* * * *</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <span class="contact-icon">📞</span>
                     <div>
                         <h3>الهاتف</h3>
-                        <p>+964 XXX XXX XXXX</p>
+                        <p>(011) 5169885007</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <span class="contact-icon">📧</span>
                     <div>
                         <h3>البريد الإلكتروني</h3>
-                        <p>info@iraqinationalcongress.iq</p>
+                        <p>babylonbaghdad1958@yahoo.com</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1328,9 +1328,9 @@ nav {
             </div>
             <div class="footer-section">
                 <h3>تواصل معنا</h3>
-                <p>📧 info@iraqinationalcongress.iq</p>
-                <p>📞 +964 XXX XXX XXXX</p>
-                <p>📍****</p>
+                <p>📧 babylonbaghdad1958@yahoo.com</p>
+                <p>📞 (011) 5169885007</p>
+                <p>📍* * * *</p>
             </div>
             <div class="footer-section">
                 <h3>تابعنا</h3>
@@ -1601,14 +1601,26 @@ function toggleLanguage() {
     document.querySelector('.submit-btn').textContent = t.formSubmit;
 }
 
-        // Form Submission
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert(currentLang === 'ar' ? 
-                'شكراً لك! تم إرسال رسالتك بنجاح.' : 
-                'Thank you! Your message has been sent successfully.');
-            event.target.reset();
-        }
+// Form Submission with mailto
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const name = document.querySelector('input[name="name"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const subject = document.querySelector('input[name="subject"]').value;
+    const message = document.querySelector('textarea[name="message"]').value;
+    
+    // Create email body
+    const body = `الاسم: ${name}%0D%0A` +
+                `البريد الإلكتروني: ${email}%0D%0A%0D%0A` +
+                `الرسالة:%0D%0A${message}`;
+    
+    // Create mailto link
+    const mailtoLink = `mailto:babylonbaghdad1958@yahoo.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+});
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1629,6 +1641,7 @@ function toggleLanguage() {
 </body>
 
 </html>
+
 
 
 
