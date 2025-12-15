@@ -1252,7 +1252,7 @@ nav {
         <p class="section-subtitle">نسعد بسماع آرائكم واقتراحاتكم</p>
         <div class="contact-container">
             <div class="contact-form">
-                <form action="mailto:babylonbaghdad1958@yahoo.com" method="post" enctype="text/plain">
+                <form onsubmit="event.preventDefault(); window.location.href='mailto:babylonbaghdad1958@yahoo.com?subject=' + encodeURIComponent(document.querySelector('input[name=subject]').value) + '&body=الاسم: ' + encodeURIComponent(document.querySelector('input[name=name]').value) + '%0D%0Aالبريد: ' + encodeURIComponent(document.querySelector('input[name=email]').value) + '%0D%0A%0D%0A' + encodeURIComponent(document.querySelector('textarea[name=message]').value);">
 				    <div class="form-group">
 				        <label>الاسم الكامل</label>
 				        <input type="text" name="name" required placeholder="أدخل اسمك">
@@ -1621,6 +1621,7 @@ function toggleLanguage() {
 </body>
 
 </html>
+
 
 
 
