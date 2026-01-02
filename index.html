@@ -507,6 +507,62 @@ margin-right: 2rem ;
             line-height: 1.7;
         }
 
+        /* Video Gallery Section */
+        .vgallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            margin: 3rem auto;
+        }
+
+        .vgallery-item {
+            height: 600px;
+            width: 400px;
+            margin:2px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .vgallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            transition: transform 0.3s;
+        }
+
+        .vgallery-item:hover video {
+            transform: scale(1.05);
+        }
+
+        .vgallery-item::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #888;
+            font-size: 1.2rem;
+            z-index: 1;
+        }
+
+        .vgallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 1.5rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+            z-index: 50;
+        }
+
+        .vgallery-item:hover .vgallery-overlay {
+            transform: translateY(0);
+        }
+
         /* Gallery Section */
         .gallery-grid {
             display: grid;
@@ -1203,45 +1259,101 @@ nav {
         </div>
     </section>
 
+<!-- Video Gallary Section -->
+    <section id="vgallery">
+        <p class="section-subtitle">معرض الفيديو</p>
+        <div class="vgallery-grid">
+            <div class="vgallery-item" data-number="1">
+                <video controls> <source src="videos4/video4.mp4" type="video/mp4"> </video> <!-- src = "ملف_الفيديو/اسم الفيديو"-->
+                <div class="vgallery-overlay">
+                    <h4>وطني العراق الحبيب</h4> <!-- النص عند المرور فوق الفيديو -->
+                </div>
+            </div>
+            <div class="vgallery-item" data-number="2">
+                <video controls> <source src="videos5/video5.mp4" type="video/mp4"> </video> <!-- src = "ملف_الفيديو/اسم الفيديو"-->
+                <div class="vgallery-overlay">
+                    <h4>التجمع الوطني العراقي للتحرير والتغيير</h4> <!-- النص عند المرور فوق الفيديو -->
+                </div>
+            </div>
+            <div class="vgallery-item" data-number="3">
+                <video controls> <source src="videos6/video6.mp4" type="video/mp4"> </video> <!-- src = "ملف_الفيديو/اسم الفيديو"-->
+                <div class="vgallery-overlay">
+                    <h4>التجمع الوطني العراقي للتحرير والتغيير</h4> <!-- النص عند المرور فوق الفيديو -->
+                </div>
+            </div>
+            <div class="vgallery-item" data-number="4">
+                <video controls> <source src="videos7/video7.mp4" type="video/mp4"> </video> <!-- src = "ملف_الفيديو/اسم الفيديو"-->
+                <div class="vgallery-overlay">
+                    <h4> إنتماء التجمع الوطني العراقي للعراق</h4> <!-- النص عند المرور فوق الفيديو -->
+                </div>
+            </div>
+            <div class="vgallery-item" data-number="5">
+                <video controls> <source src="videos8/video8.mp4" type="video/mp4"> </video><!-- src = "ملف_الفيديو/اسم الفيديو"-->
+                <div class="vgallery-overlay">
+                    <h4>`ذكرى استشهاد صدام حسين</h4><!-- النص عند المرور فوق الفيديو -->
+                </div>
+            </div>
+            <div class="vgallery-item" data-number="6">
+                <video controls> <source src="videos9/video9.mp4" type="video/mp4"> </video><!-- src = "ملف_الفيديو/اسم الفيديو"-->
+                <div class="vgallery-overlay">
+                    <h4>الدكتور جمال السلطان</h4> <!-- النص عند المرور فوق الفيديو -->
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Gallery Section -->
     <section id="gallery">
         <p class="section-subtitle">معرض الصور</p>
         <div class="gallery-grid">
-            <div class="gallery-item" data-number="1">
+
+            <div class="gallery-item" data-number="1"><a href="images/image1.jpg">
                 <img src="images/image1.jpg" alt="صورة نسر ذهبي يحمل علم العراق">
                 <div class="gallery-overlay">
                     <h4>علم العراق على نسر ذهبي</h4>
-                </div>
+                </div></a>
             </div>
-            <div class="gallery-item" data-number="2">
-        <img src="images/image2.jpg" alt="صورة لشعار التجمع الوطني العراقي للتحرير والتغيير">
+            <div class="gallery-item" data-number="2"><a href="images/image2.jpg">
+                <img src="images/image2.jpg" alt="صورة لشعار التجمع الوطني العراقي للتحرير والتغيير">
                 <div class="gallery-overlay">
                     <h4>شعار التجمع الوطني العراقي للتحرير والتغيير</h4>
-                </div>
+                </div></a>
             </div>
-            <div class="gallery-item" data-number="3">
+            <div class="gallery-item" data-number="3"><a href="images/image3.jpg">
                 <img src="images/image3.jpg" alt="صورة لنسر ذهبي يحمل علم العراق">
                 <div class="gallery-overlay">
                     <h4>شعار مكتب امانة سر التجمع الوطني العراقي للتحرير والتغيير</h4>
-                </div>
+                </div></a>
             </div>
-            <div class="gallery-item" data-number="4">
+            <div class="gallery-item" data-number="4"><a href="images/image4.jpg">
                 <img src="images/image4.jpg" alt="صورة رمزية لأنتماء التجمع الوطني العراقي للعراق">
                 <div class="gallery-overlay">
                     <h4>صورة رمزية لأنتماء التجمع الوطني العراقي للعراق</h4>
-                </div>
+                </div></a>
             </div>
-            <div class="gallery-item" data-number="5">
+            <div class="gallery-item" data-number="5"><a href="images/image5.jpg">
                 <img src="images/image5.jpg" alt="صورة لصدام حسين">
                 <div class="gallery-overlay">
                     <h4>صورة لصدام حسين</h4>
-                </div>
+                </div></a>
             </div>
-            <div class="gallery-item" data-number="6">
-                <img src="images/image6.jpg" alt="صورة لعلم العراق">
+            <div class="gallery-item" data-number="6"><a href="images/image6.png">
+                <img src="images/image6.png" alt="صورة لعلم العراق">
                 <div class="gallery-overlay">
-                    <h4>صورة لعلم العراق</h4>
-                </div>
+                    <h4>الدكتور جمال السلطان</h4>
+                </div></a>
+            </div>
+                <div class="gallery-item" data-number="7"><a href="images/image7.png">
+                <img src="images/image7.png" alt="صورة لعلم العراق">
+                <div class="gallery-overlay">
+                    <h4>أعمال الدكتور جمال السلطان </h4>
+                </div></a>
+            </div>
+                <div class="gallery-item" data-number="8"><a href="images/image8.png">
+                <img src="images/image8.png" alt="صورة لعلم العراق">
+                <div class="gallery-overlay">
+                    <h4>التجمع الوطني العراقي للتحرير والتغيير</h4>
+                </div></a>
             </div>
         </div>
     </section>
@@ -1285,7 +1397,7 @@ nav {
                     <span class="contact-icon">📞</span>
                     <div>
                         <h3>الهاتف</h3>
-                        <p>+011 5169 885007</p>
+                        <p  dir="ltr">+011 5169 885007</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1301,7 +1413,7 @@ nav {
                         <h3>وسائل التواصل الاجتماعي</h3>
                         <div class="social-links">
                             <a href="#" title="Facebook">📘</a>
-                            <a href="https://x.com/jamalalsultan64?s=11" title="Twitter" target="_blank">🐦</a>
+                            <a href="https://x.com/jamalalsultan64?s=11" title="X" target="_blank">✖️</a>
                             <a href="#" title="Instagram">📷</a>
                             <a href="#" title="YouTube">📺</a>
                             <a href="#" title="Telegram">✈️</a>
@@ -1329,21 +1441,21 @@ nav {
             <div class="footer-section">
                 <h3>تواصل معنا</h3>
                 <p>📧 babylonbaghdad1958@yahoo.com</p>
-                <p>📞 +011 5169 885007</p>
+                <p>📞  <span dir="ltr">+011 5169 885007</span></p>
                 <p>📍* * * *</p>
             </div>
             <div class="footer-section">
                 <h3>تابعنا</h3>
                 <div class="social-links">
                     <a href="#">📘</a>
-                    <a href="https://x.com/jamalalsultan64?s=11" target="_blank">🐦</a>
+                    <a href="https://x.com/jamalalsultan64?s=11" target="_blank">✖️</a>
                     <a href="#">📷</a>
                     <a href="#">📺</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 التجمع الوطني العراقي. جميع الحقوق محفوظة.</p>
+            <p>&copy; 2025 مكتب امانة السر التجمع الوطني العراقي للتحرير والتغيير.</p>
         </div>
     </footer>
 
@@ -1621,7 +1733,6 @@ function toggleLanguage() {
 </body>
 
 </html>
-
 
 
 
